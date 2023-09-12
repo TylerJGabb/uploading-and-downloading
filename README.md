@@ -1,6 +1,8 @@
 # Running Locally
 
 ```sh
+export FUNCTION_TARGET=SignedUrls # or whatever other entrypoint you're using
+export USE_CREDS_FILE=true # uses GSA creds file instead of default application credentials
 go run $REPO_ROOT/cmd/main.go
 ```
 
