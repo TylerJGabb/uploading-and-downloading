@@ -1,5 +1,15 @@
 # Running Locally
 
+```sh
+go run $REPO_ROOT/cmd/main.go
+```
+
+this might be helpful https://cloud.google.com/functions/docs/running/overview
+
+## Functions Framework (https://github.com/GoogleCloudPlatform/functions-framework-go)
+
+TYLER: ACTUALLY FOLLOW THIS EXAMPLE, SLOWLY https://github.com/GoogleCloudPlatform/functions-framework-go
+
 ## Impersonation (doesn't work IDK why)
 
 ```sh
@@ -22,6 +32,7 @@ Additionally, you'll need to generate a key for the GSA and save it as $REPO_ROO
 
 https://cloud.google.com/go/docs/reference/cloud.google.com/go/storage/latest
 https://pkg.go.dev/cloud.google.com/go/storage#hdr-Credential_requirements_for_signing
+https://github.com/GoogleCloudPlatform/golang-samples/blob/993a6162d95844e06564b429034b39f6da7dff72/functions/functionsv2/helloworld/hello_world.go
 
 # Implementing one-time-upload use case
 
