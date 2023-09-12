@@ -13,7 +13,7 @@ func main() {
 
 	bucketName := "bucket-1-afee6"
 	objectName := "object-name"
-	url, err := examples.GenerateV4PutObjectSignedURL(
+	putUrl, err := examples.GenerateV4PutObjectSignedURL(
 		os.Stdout,
 		bucketName,
 		objectName,
@@ -22,5 +22,16 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(url)
+
+	getUrl, err := examples.GenerateV4GetObjectSignedURL(
+		os.Stdout,
+		bucketName,
+		objectName,
+	)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println("\n\nPUT: " + putUrl)
+	fmt.Println("\n\nGET: " + getUrl)
 }

@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/storage"
-	"google.golang.org/api/option"
+	"github.com/tylerjgabb/uploading-and-downloading/utils"
 )
 
 // generateV4GetObjectSignedURL generates object signed URL with PUT method.
@@ -16,7 +16,7 @@ func GenerateV4PutObjectSignedURL(w io.Writer, bucket, object string) (string, e
 	// object := "object-name"
 
 	ctx := context.Background()
-	client, err := storage.NewClient(ctx, option.WithCredentialsFile("./creds.json"))
+	client, err := utils.NewStorageClient(ctx)
 	if err != nil {
 		return "", fmt.Errorf("storage.NewClient: %w", err)
 	}
