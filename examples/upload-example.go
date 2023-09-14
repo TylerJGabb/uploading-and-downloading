@@ -18,7 +18,7 @@ func GenerateV4PutObjectSignedURL(w io.Writer, bucket, object string) (string, e
 	ctx := context.Background()
 	client, err := utils.NewStorageClient(ctx)
 	if err != nil {
-		return "", fmt.Errorf("storage.NewClient: %w", err)
+		return "", fmt.Errorf("utils.NewStorageClient: %w", err)
 	}
 	defer client.Close()
 
@@ -39,21 +39,6 @@ func GenerateV4PutObjectSignedURL(w io.Writer, bucket, object string) (string, e
 		},
 		Expires: time.Now().Add(15 * time.Minute),
 	}
-
-	// iter := client.Bucket(bucket).Objects(ctx, nil)
-	// for {
-	// 	attrs, err := iter.Next()
-	// 	if err == iterator.Done {
-	// 		fmt.Println("Done")
-	// 		break
-	// 	}
-	// 	if err != nil {
-	// 		// print the error
-	// 		fmt.Println("Error Iterating through objects", err)
-	// 		break
-	// 	}
-	// 	fmt.Println(attrs.Name)
-	// }
 
 	u, err := client.Bucket(bucket).SignedURL(object, opts)
 	if err != nil {

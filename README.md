@@ -39,3 +39,17 @@ https://github.com/GoogleCloudPlatform/golang-samples/blob/993a6162d95844e06564b
 # Implementing one-time-upload use case
 
 You can achieve this by allowing the service account to read and create objects only. This way the link - once used - can't be used to upload again to the same file since it needs to delete it first which the service account doesn't have permission to.
+
+# Deploying
+
+```sh
+gcloud functions deploy $FUNCTION_NAME \
+--gen2 \
+--runtime=go121 \
+--region=us-central1 \
+--source=. \
+--entry-point=$FUNCTION_TARGET \
+--trigger-http \
+--allow-unauthenticated \
+--service-account=$FUNCTION_GSA
+```
