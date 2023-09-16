@@ -9,6 +9,7 @@ function App() {
     const token = jwt_decode(credentialResponse.credential);
     // this credential should be sent in requests to the backend
     // https://developers.google.com/identity/gsi/web/guides/verify-google-id-token
+    // https://stackoverflow.com/questions/36716117/validating-google-sign-in-id-token-in-go
     console.log("token", token);
   };
 
