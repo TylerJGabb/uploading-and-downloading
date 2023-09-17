@@ -34,6 +34,7 @@ function App() {
           Learn React
         </a>
         <div>
+          {/* https://developers.google.com/identity/gsi/web/guides/overview */}
           <GoogleLogin onSuccess={onSuccess} onFailure={onFailure} />
         </div>
       </header>
