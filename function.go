@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
-	"github.com/tylerjgabb/uploading-and-downloading/examples"
+	examples "github.com/tylerjgabb/uploading-and-downloading/src"
 )
 
 type RequestBody struct {
