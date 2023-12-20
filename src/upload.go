@@ -35,7 +35,8 @@ func GenerateV4PutObjectSignedURL(w io.Writer, bucket, object string) (string, e
 		Scheme: storage.SigningSchemeV4,
 		Method: "PUT",
 		Headers: []string{
-			"Content-Type:application/octet-stream",
+			// "Content-Type:application/octet-stream",
+			"Content-Type:image/png",
 		},
 		Expires: time.Now().Add(15 * time.Minute),
 	}
